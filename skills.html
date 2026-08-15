@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Skills — Bikash Gosain</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="nav-inner">
+
+    <span class="prompt">
+        <a href="index.html">BikashGosain</a>
+    </span>
+
+    <nav class="routes" id="routes">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      aria-label="Toggle light and dark theme">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+      menu
+    </button>
+
+  </div>
+</header>
+
+
+<main class="wrap">
+
+<section>
+
+  <div class="route-label">
+    <span class="method">GET</span>
+    /skills
+    <span class="status">200 OK</span>
+  </div>
+
+  <h1 class="section-title">Technical Skills</h1>
+
+  <div class="config">
+
+    <div class="config-row">
+      <span class="config-key">cloud_devops</span>
+      <span class="config-val">
+        AWS, Microsoft Azure, Cloudflare, Docker, Kubernetes, GitHub Actions (CI/CD)
+      </span>
+    </div>
+
+    <div class="config-row">
+      <span class="config-key">languages</span>
+      <span class="config-val">
+        Python, JavaScript
+      </span>
+    </div>
+
+    <div class="config-row">
+      <span class="config-key">frameworks</span>
+      <span class="config-val">
+        Django, Django REST Framework
+      </span>
+    </div>
+
+    <div class="config-row">
+      <span class="config-key">frontend</span>
+      <span class="config-val">
+        HTML, CSS, JavaScript
+      </span>
+    </div>
+
+    <div class="config-row">
+      <span class="config-key">database</span>
+      <span class="config-val">
+        PostgreSQL, MySQL, SQLite
+      </span>
+    </div>
+
+    <div class="config-row">
+      <span class="config-key">deployment</span>
+      <span class="config-val">
+        Render, PythonAnywhere
+      </span>
+    </div>
+
+    <div class="config-row">
+      <span class="config-key">tools</span>
+      <span class="config-val">
+        Git, GitHub, VS Code, Postman,done Linux/CLI
+      </span>
+    </div>
+
+  </div>
+
+</section>
+
+
+  <!-- Additional Skills -->
+
+  <section>
+
+    <div class="route-label">
+      <span class="method">GET</span>
+      /skills/other
+      <span class="status">200 OK</span>
+    </div>
+
+    <h2 class="section-title">Other Skills</h2>
+
+    <div class="pill-list">
+
+      <span class="pill">Problem Solving</span>
+
+      <span class="pill">REST API Development</span>
+
+      <span class="pill">Database Design</span>
+
+      <span class="pill">Debugging</span>
+
+      <span class="pill">Git & GitHub</span>
+
+      <span class="pill">CI/CD</span>
+
+      <span class="pill">Web Development</span>
+
+      <span class="pill">QA Testing</span>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  © <span id="year"></span> Bikash Gosain — built with Django habits and HTML tags.
+</footer>
+
+
+<button
+  class="to-top"
+  id="toTop"
+  aria-label="Scroll back to top">
+  ↑
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

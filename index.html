@@ -1,570 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bikash Gosain — Backend-leaning Full-Stack Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#0B0E14;
-    --panel:#12151E;
-    --panel-alt:#171B26;
-    --line:#242938;
-    --fog:#8A93A6;
-    --paper:#E9ECF3;
-    --signal:#34D399;
-    --signal-dim:#1F5B45;
-    --wire:#5B8DEF;
-    --warn:#F5B942;
-    --muted-text:#B7BECC;
-    --term-text:#C7CEDB;
-    --radius:10px;
-    --mono:'JetBrains Mono', ui-monospace, monospace;
-    --sans:'Inter', -apple-system, sans-serif;
-    color-scheme:dark;
-  }
-  html[data-theme="light"]{
-    --ink:#F4F6FA;
-    --panel:#FFFFFF;
-    --panel-alt:#F0F2F7;
-    --line:#DEE2EC;
-    --fog:#667085;
-    --paper:#12141C;
-    --signal:#0E9A66;
-    --signal-dim:#BFEBDC;
-    --wire:#2F5FD6;
-    --warn:#B4780A;
-    --muted-text:#4B5566;
-    --term-text:#33394A;
-    color-scheme:light;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--ink);
-    color:var(--paper);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    transition:background .2s ease, color .2s ease;
-  }
-  a{color:inherit;}
-  ::selection{background:var(--signal-dim); color:var(--paper);}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  <title>Bikash Gosain — DevOps Engineer & Python/Django Developer</title>
 
-  /* ---------- NAV ---------- */
-  header.topbar{
-    position:sticky; top:0; z-index:50;
-    background:color-mix(in srgb, var(--ink) 86%, transparent);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-    transition:background .2s ease, border-color .2s ease;
-  }
-  .nav-inner{
-    max-width:920px; margin:0 auto; padding:14px 24px;
-    display:flex; align-items:center; justify-content:space-between;
-    font-family:var(--mono); font-size:13px;
-  }
-  .prompt{color:var(--signal); white-space:nowrap;}
-  .prompt span{color:var(--fog);}
-  nav.routes{display:flex; gap:22px;}
-  nav.routes a{
-    color:var(--fog); text-decoration:none; font-size:13px;
-    transition:color .15s ease;
-    border-bottom:1px solid transparent;
-    padding-bottom:2px;
-  }
-  nav.routes a:hover, nav.routes a:focus-visible{ color:var(--paper); border-bottom-color:var(--signal); outline:none;}
-  .nav-toggle{display:none; background:none; border:1px solid var(--line); color:var(--paper); border-radius:6px; padding:6px 10px; font-family:var(--mono); cursor:pointer;}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  @media (max-width:640px){
-    nav.routes{
-      position:absolute; top:100%; left:0; right:0;
-      background:var(--panel); border-bottom:1px solid var(--line);
-      flex-direction:column; padding:14px 24px; gap:14px;
-      display:none;
-    }
-    nav.routes.open{display:flex;}
-    .nav-toggle{display:inline-block;}
-  }
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-  /* ---------- HERO ---------- */
-  .hero{padding:76px 0 56px;}
-  .eyebrow{
-    font-family:var(--mono); font-size:12.5px; color:var(--signal);
-    display:inline-flex; align-items:center; gap:8px;
-    border:1px solid var(--signal-dim); background:rgba(52,211,153,0.06);
-    padding:5px 10px; border-radius:6px; margin-bottom:22px;
-  }
-  .eyebrow::before{content:"●"; font-size:8px; color:var(--signal);}
-  h1{
-    font-family:var(--mono); font-weight:800;
-    font-size:clamp(32px, 6vw, 52px);
-    letter-spacing:-0.01em;
-    margin:0 0 10px;
-    color:var(--paper);
-  }
-  .role-line{
-    font-size:18px; color:var(--fog); margin:0 0 30px; max-width:560px;
-  }
-  .role-line b{color:var(--paper); font-weight:600;}
-
-  .terminal{
-    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
-    margin-bottom:32px;
-  }
-  .terminal-bar{
-    display:flex; align-items:center; gap:8px;
-    padding:10px 14px; border-bottom:1px solid var(--line); background:var(--panel-alt);
-  }
-  .dot{width:10px; height:10px; border-radius:50%;}
-  .dot.r{background:#ED6A5E;} .dot.y{background:#F4BF4F;} .dot.g{background:#61C554;}
-  .terminal-title{margin-left:8px; font-family:var(--mono); font-size:12px; color:var(--fog);}
-  .terminal-body{
-    font-family:var(--mono); font-size:13.5px; padding:20px 22px 24px;
-    color:var(--term-text); white-space:pre-wrap; min-height:168px;
-  }
-  .terminal-body .cmd{color:var(--signal);}
-  .terminal-body .key{color:var(--wire);}
-  .terminal-body .str{color:#E8B776;}
-  .terminal-body .bool{color:var(--signal);}
-  .cursor{display:inline-block; width:7px; height:15px; background:var(--signal); vertical-align:-2px; animation:blink 1s steps(1) infinite;}
-  @media (prefers-reduced-motion: reduce){ .cursor{animation:none;} }
-  @keyframes blink{50%{opacity:0;}}
-
-  .cta-row{display:flex; flex-wrap:wrap; gap:12px;}
-  .btn{
-    font-family:var(--mono); font-size:13px; text-decoration:none;
-    padding:11px 18px; border-radius:8px; border:1px solid var(--line);
-    display:inline-flex; align-items:center; gap:8px; transition:all .15s ease;
-  }
-  .btn.primary{background:var(--signal); color:#04140D; border-color:var(--signal); font-weight:700;}
-  .btn.primary:hover{background:#2ebd8a;}
-  .btn.ghost{color:var(--paper);}
-  .btn.ghost:hover{border-color:var(--fog);}
-
-  /* ---------- SECTION SHELL ---------- */
-  section{padding:56px 0; border-top:1px solid var(--line);}
-  .route-label{
-    font-family:var(--mono); font-size:12.5px; color:var(--fog);
-    display:flex; align-items:center; gap:10px; margin-bottom:8px;
-  }
-  .method{color:var(--wire); font-weight:700;}
-  .status{
-    margin-left:auto; font-size:11px; color:var(--signal);
-    border:1px solid var(--signal-dim); padding:2px 8px; border-radius:20px;
-  }
-  h2.section-title{
-    font-family:var(--mono); font-size:24px; margin:0 0 28px; color:var(--paper);
-  }
-
-  /* ---------- SKILLS (config style) ---------- */
-  .config{
-    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:22px 24px; font-family:var(--mono); font-size:13.5px;
-  }
-  .config-row{
-    display:grid; grid-template-columns:180px 1fr; gap:16px;
-    padding:9px 0; border-bottom:1px dashed var(--line);
-  }
-  .config-row:last-child{border-bottom:none;}
-  .config-key{color:var(--wire);}
-  .config-val{color:var(--paper);}
-  @media (max-width:560px){
-    .config-row{grid-template-columns:1fr;}
-    .config-key{color:var(--wire); font-weight:700;}
-  }
-
-  /* ---------- PROJECTS ---------- */
-  .projects{display:flex; flex-direction:column; gap:16px;}
-  .card{
-    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:22px 24px; transition:border-color .15s ease, transform .15s ease;
-  }
-  .card:hover{border-color:#3a4257;}
-  .card-top{
-    display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:10px;
-    font-family:var(--mono); font-size:12.5px;
-  }
-  .card-route{color:var(--fog);}
-  .card-title{
-    font-family:var(--sans); font-weight:700; font-size:17px; color:var(--paper);
-    margin:0 0 8px;
-  }
-  .card-desc{color:var(--muted-text); font-size:14.5px; margin:0 0 14px;}
-  .tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;}
-  .tag{
-    font-family:var(--mono); font-size:11.5px; color:var(--fog);
-    background:var(--panel-alt); border:1px solid var(--line);
-    padding:3px 9px; border-radius:20px;
-  }
-  .card-links{display:flex; gap:16px; font-family:var(--mono); font-size:12.5px;}
-  .card-links a{color:var(--wire); text-decoration:none; border-bottom:1px solid transparent;}
-  .card-links a:hover{border-bottom-color:var(--wire);}
-
-  /* ---------- EXPERIENCE (log style) ---------- */
-  .log{border-left:2px solid var(--line); margin-left:6px; padding-left:24px;}
-  .log-entry{position:relative; padding-bottom:32px;}
-  .log-entry:last-child{padding-bottom:0;}
-  .log-entry::before{
-    content:""; position:absolute; left:-30px; top:4px;
-    width:9px; height:9px; border-radius:50%; background:var(--signal);
-    box-shadow:0 0 0 4px rgba(52,211,153,0.12);
-  }
-  .log-time{font-family:var(--mono); font-size:12px; color:var(--signal); margin-bottom:4px;}
-  .log-role{font-weight:700; font-size:16px; color:var(--paper); margin:0 0 2px;}
-  .log-org{font-family:var(--mono); font-size:12.5px; color:var(--fog); margin-bottom:10px;}
-  .log-entry ul{margin:0; padding-left:18px; color:var(--muted-text); font-size:14.5px;}
-  .log-entry li{margin-bottom:6px;}
-
-  /* ---------- EDUCATION / CERTS ---------- */
-  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-  @media (max-width:640px){ .grid-2{grid-template-columns:1fr;} }
-  .mini-card{
-    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:18px 20px;
-  }
-  .mini-card h3{margin:0 0 4px; font-size:15px; color:var(--paper);}
-  .mini-card p{margin:0; font-size:13px; color:var(--fog); font-family:var(--mono);}
-  .pill-list{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
-  .pill{
-    font-family:var(--mono); font-size:12px; color:var(--paper);
-    background:var(--panel-alt); border:1px solid var(--line); padding:5px 11px; border-radius:20px;
-  }
-
-  /* ---------- CONTACT ---------- */
-  .contact-panel{
-    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:32px; text-align:left;
-  }
-  .contact-grid{display:flex; flex-wrap:wrap; gap:28px; margin-top:18px;}
-  .contact-item{font-family:var(--mono); font-size:13.5px;}
-  .contact-item .k{color:var(--fog); display:block; font-size:11.5px; margin-bottom:4px;}
-  .contact-item a{color:var(--wire); text-decoration:none;}
-  .contact-item a:hover{text-decoration:underline;}
-
-  footer{
-    padding:28px 0 40px; text-align:center;
-    font-family:var(--mono); font-size:12px; color:var(--fog);
-  }
-
-  /* ---------- THEME TOGGLE ---------- */
-  .theme-toggle{
-    background:var(--panel-alt); border:1px solid var(--line); color:var(--paper);
-    width:32px; height:32px; border-radius:7px; cursor:pointer;
-    display:inline-flex; align-items:center; justify-content:center;
-    font-size:15px; line-height:1; transition:border-color .15s ease, background .2s ease;
-    margin-left:18px;
-  }
-  .theme-toggle:hover{border-color:var(--fog);}
-  .theme-toggle .icon-moon{display:none;}
-  html[data-theme="light"] .theme-toggle .icon-sun{display:none;}
-  html[data-theme="light"] .theme-toggle .icon-moon{display:inline;}
-  .nav-inner{gap:10px;}
-
-  /* ---------- SCROLL TO TOP ---------- */
-  .to-top{
-    position:fixed; right:22px; bottom:22px; z-index:60;
-    width:42px; height:42px; border-radius:50%;
-    background:var(--signal); color:#04140D; border:none;
-    font-family:var(--mono); font-size:16px; font-weight:700; cursor:pointer;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 10px 24px -8px rgba(0,0,0,0.5);
-    opacity:0; visibility:hidden; transform:translateY(8px);
-    transition:opacity .2s ease, transform .2s ease, visibility .2s ease;
-  }
-  .to-top.visible{opacity:1; visibility:visible; transform:translateY(0);}
-  .to-top:hover{background:#2ebd8a;}
-  @media (prefers-reduced-motion: reduce){
-    .to-top{transition:opacity .2s ease, visibility .2s ease;}
-  }
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
 
 <header class="topbar">
+
   <div class="nav-inner">
-    <span class="prompt">bikash<span>@</span>dev<span>:~$</span></span>
+
+    <span class="prompt">
+      <a href="index.html">BikashGosain</a>
+    </span>
+
     <nav class="routes" id="routes">
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+
+      <a href="index.html">Home</a>
+
+      <a href="skills.html">Skills</a>
+
+      <a href="projects.html">Projects</a>
+
+      <a href="experience.html">Experience</a>
+
+      <a href="education.html">Education</a>
+
+      <a href="contact.html">Contact</a>
+
     </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-      <span class="icon-sun">☀</span><span class="icon-moon">☾</span>
+
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      aria-label="Toggle light and dark theme">
+
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+
     </button>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">menu</button>
+
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+
+      menu
+
+    </button>
+
   </div>
+
 </header>
+
+
 
 <main class="wrap">
 
+
   <!-- HERO -->
-  <section class="hero" style="border-top:none;">
-    <div class="eyebrow">GET /bikash-gosain HTTP/1.1</div>
-    <h1>Bikash Gosain</h1>
-    <p class="role-line"><b>Full-Stack Developer</b> — Python, Django &amp; Django REST Framework. CSIT student in Bhaktapur, Nepal, building and shipping full-stack apps.</p>
+
+<section
+  class="hero"
+  style="border-top:none;">
+
+  <div class="hero-profile">
+
+    <div class="profile-image-wrapper">
+      <img
+        src="assets/images/profile.jpeg"
+        alt="Bikash Gosain"
+        class="profile-image">
+    </div>
+
+
+    <div class="hero-content">
+
+      <h1>
+        Bikash Gosain
+      </h1>
+
+      <p class="role-line">
+        <b>Aspiring DevOps Engineer</b>
+        <span> | </span>
+        <b>Python / Django Developer</b>
+      </p>
+
+      <p class="role-line">
+        CSIT student in Bhaktapur, Nepal, building full-stack
+        applications with Python and Django while developing
+        practical skills in DevOps, cloud computing, Docker,
+        Kubernetes, and CI/CD.
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+    <!-- TERMINAL -->
 
     <div class="terminal">
+
       <div class="terminal-bar">
-        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <span class="terminal-title">bikash — response.json</span>
+
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
+
+        <span class="terminal-title">
+          bikash — response.json
+        </span>
+
       </div>
-      <div class="terminal-body" id="typedOut" aria-label="Terminal output showing developer status as JSON"></div>
+
+
+      <div
+        class="terminal-body"
+        id="typedOut"
+        aria-label="Terminal output showing developer profile">
+      </div>
+
     </div>
+
+
+
+    <!-- BUTTONS -->
 
     <div class="cta-row">
-      <a class="btn primary" href="#projects">View Projects →</a>
-      <a class="btn ghost" href="mailto:bikashgosain0@gmail.com">Email Me</a>
-      <a class="btn ghost" href="https://github.com/BikashGosain" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/bikash-gosain/" target="_blank" rel="noopener">LinkedIn ↗</a>
+
+      <a
+        class="btn primary"
+        href="projects.html">
+        View Projects →
+      </a>
+
+
+      <a
+        class="btn ghost"
+        href="contact.html">
+        Contact Me
+      </a>
+
+
+      <a
+        class="btn ghost"
+        href="assets/cv/Bikash-Gosain-DevOps-CV.pdf"
+        target="_blank">
+        DevOps CV ↗
+      </a>
+
+
+      <a
+        class="btn ghost"
+        href="assets/cv/Bikash-Gosain-Django-CV.pdf"
+        target="_blank">
+        Django CV ↗
+      </a>
+
     </div>
+
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="route-label"><span class="method">GET</span> /skills <span class="status">200 OK</span></div>
-    <h2 class="section-title">stack.config</h2>
+
+
+  <!-- PROFESSIONAL SUMMARY -->
+
+  <section>
+
+
+
+
+    <h2 class="section-title">
+      About Me
+    </h2>
+
+
+    <div class="contact-panel">
+
+      <p
+        style="margin:0; color:var(--muted-text); font-size:14.5px;">
+
+        CSIT student with hands-on experience building full-stack
+        web applications using Python, Django, Django REST Framework,
+        PostgreSQL, and JavaScript. Experienced in REST APIs,
+        authentication, Docker-based application deployment, and
+        CI/CD workflows.
+
+      </p>
+
+
+      <p
+        style="margin:16px 0 0; color:var(--muted-text); font-size:14.5px;">
+
+        Currently developing my DevOps and cloud skills through
+        practical training and coursework involving AWS,
+        Microsoft Azure, Kubernetes, Docker, containerization,
+        and GitHub Actions.
+
+      </p>
+
+
+      <p
+        style="margin:16px 0 0; color:var(--muted-text); font-size:14.5px;">
+
+        Open to DevOps, Python/Django, and Web Development
+        internship opportunities.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CORE TECHNOLOGIES -->
+
+  <section>
+
+
+
+
+    <h2 class="section-title">
+      Core Stack
+    </h2>
+
+
     <div class="config">
-      <div class="config-row"><span class="config-key">languages</span><span class="config-val">Python, JavaScript</span></div>
-      <div class="config-row"><span class="config-key">frameworks</span><span class="config-val">Django, Django REST Framework</span></div>
-      <div class="config-row"><span class="config-key">frontend</span><span class="config-val">HTML, CSS, JavaScript</span></div>
-      <div class="config-row"><span class="config-key">database</span><span class="config-val">PostgreSQL, MySQL, SQLite</span></div>
-      <div class="config-row"><span class="config-key">auth_api</span><span class="config-val">JWT (SimpleJWT), REST API design</span></div>
-      <div class="config-row"><span class="config-key">devops</span><span class="config-val">Docker, GitHub Actions (CI/CD), Render, PythonAnywhere</span></div>
-      <div class="config-row"><span class="config-key">tools</span><span class="config-val">Git, GitHub, VS Code</span></div>
+
+
+      <div class="config-row">
+
+        <span class="config-key">
+          backend
+        </span>
+
+        <span class="config-val">
+          Python, Django, Django REST Framework
+        </span>
+
+      </div>
+
+
+
+      <div class="config-row">
+
+        <span class="config-key">
+          cloud
+        </span>
+
+        <span class="config-val">
+          AWS, Microsoft Azure, Cloudflare
+        </span>
+
+      </div>
+
+
+
+      <div class="config-row">
+
+        <span class="config-key">
+          devops
+        </span>
+
+        <span class="config-val">
+          Docker, Kubernetes, GitHub Actions (CI/CD)
+        </span>
+
+      </div>
+
+
+
+      <div class="config-row">
+
+        <span class="config-key">
+          database
+        </span>
+
+        <span class="config-val">
+          PostgreSQL, MySQL, SQLite
+        </span>
+
+      </div>
+
+
+
+      <div class="config-row">
+
+        <span class="config-key">
+          frontend
+        </span>
+
+        <span class="config-val">
+          HTML, CSS, JavaScript
+        </span>
+
+      </div>
+
+
+
+      <div class="config-row">
+
+        <span class="config-key">
+          tools
+        </span>
+
+        <span class="config-val">
+          Git, GitHub, VS Code, Postman, Linux/CLI
+        </span>
+
+      </div>
+
+
     </div>
+
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="route-label"><span class="method">GET</span> /projects <span class="status">200 OK</span></div>
-    <h2 class="section-title">Projects</h2>
+
+
+  <!-- FEATURED PROJECTS -->
+
+  <section>
+
+
+
+    <h2 class="section-title">
+      Featured Projects
+    </h2>
+
+
+
     <div class="projects">
 
-      <article class="card">
-        <div class="card-top"><span class="card-route">/projects/blogger-nepal</span></div>
-        <h3 class="card-title">BloggerNepal</h3>
-        <p class="card-desc">A Nepal-focused blogging platform with auth, post creation/editing, recommendations, analytics, and Cloudinary media handling. Dockerized and deployed on Render with PostgreSQL.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">HTML/CSS/JS</span></div>
-        <div class="card-links">
-          <a href="https://web-based-blogging-platform-with-content.onrender.com" target="_blank" rel="noopener">Live Demo ↗</a>
-          <a href="https://github.com/BikashGosain/BloggerNepal" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
-      </article>
+
+      <!-- BloggerNepal -->
 
       <article class="card">
-        <div class="card-top"><span class="card-route">/projects/rentms</span></div>
-        <h3 class="card-title">RentMS — Rental Management System</h3>
-        <p class="card-desc">A full-stack rental management system connecting landlords and tenants, covering the full property rental workflow. Deployed on Render with PostgreSQL.</p>
-        <div class="tags"><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">HTML/CSS/JS</span></div>
-        <div class="card-links">
-          <a href="https://bikashgosain.com.np" target="_blank" rel="noopener">Live Demo ↗</a>
-          <a href="https://github.com/BikashGosain/Rent_Management_System" target="_blank" rel="noopener">GitHub ↗</a>
+
+        <div class="card-top">
+
+          <span class="card-route">
+            /projects/blogger-nepal
+          </span>
+
         </div>
+
+
+        <h3 class="card-title">
+          BloggerNepal
+        </h3>
+
+
+        <p class="card-desc">
+
+          Nepal-focused blogging platform with authentication,
+          content recommendation, analytics, Cloudinary media
+          integration, PostgreSQL, Docker, and Render deployment.
+
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+
+        </div>
+
+
+        <div class="card-links">
+
+          <a
+            href="https://web-based-blogging-platform-with-content.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer">
+            Live Demo ↗
+          </a>
+
+          <a
+            href="https://github.com/BikashGosain/BloggerNepal"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+
+        </div>
+
       </article>
 
-      <article class="card">
-        <div class="card-top"><span class="card-route">/projects/jwt-auth</span></div>
-        <h3 class="card-title">Django JWT API Token Authentication</h3>
-        <p class="card-desc">A REST API with JWT-based authentication and role-based access control, built with DRF and SimpleJWT.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">DRF</span><span class="tag">SimpleJWT</span><span class="tag">HTML/CSS</span></div>
-        <div class="card-links">
-          <a href="https://django-jwt-api-token-authentication.onrender.com" target="_blank" rel="noopener">Live Demo ↗</a>
-          <a href="https://github.com/BikashGosain/Django-JWT-API-Token-Authentication" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
-      </article>
+
+
+      <!-- RentMS -->
 
       <article class="card">
-        <div class="card-top"><span class="card-route">/projects/student-portal</span></div>
-        <h3 class="card-title">Student Portal System</h3>
-        <p class="card-desc">A student portal giving students a central place for notes, homework tracking, and a to-do list. Deployed on Render with PostgreSQL.</p>
-        <div class="tags"><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">HTML/CSS</span></div>
-        <div class="card-links">
-          <a href="https://student-study-portal-lrz7.onrender.com" target="_blank" rel="noopener">Live Demo ↗</a>
-          <a href="https://github.com/BikashGosain/Student-Study-Portal" target="_blank" rel="noopener">GitHub ↗</a>
+
+        <div class="card-top">
+
+          <span class="card-route">
+            /projects/rentms
+          </span>
+
         </div>
+
+
+        <h3 class="card-title">
+          RentMS — Rental Management System
+        </h3>
+
+
+        <p class="card-desc">
+
+          Full-stack rental management system connecting
+          landlords and tenants with administrative features
+          and a complete property rental workflow.
+
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">HTML/CSS/JS</span>
+
+        </div>
+
+
+        <div class="card-links">
+
+          <a
+            href="https://bikashgosain.com.np"
+            target="_blank"
+            rel="noopener noreferrer">
+            Live Demo ↗
+          </a>
+
+          <a
+            href="https://github.com/BikashGosain/Rent_Management_System"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+
+        </div>
+
       </article>
 
-      <article class="card">
-        <div class="card-top"><span class="card-route">/projects/drf-project</span></div>
-        <h3 class="card-title">DRF Project</h3>
-        <p class="card-desc">Hands-on practice of core DRF concepts — function-based views, class-based views, mixins, and generic views — building each approach from scratch.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">Django REST Framework</span></div>
-        <div class="card-links">
-          <a href="https://github.com/BikashGosain/drf-project" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
-      </article>
 
     </div>
-  </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="route-label"><span class="method">GET</span> /experience <span class="status">200 OK</span></div>
-    <h2 class="section-title">Work Experience</h2>
-    <div class="log">
 
-      <div class="log-entry">
-        <div class="log-time">2023 — 2024</div>
-        <h3 class="log-role">QA Tester</h3>
-        <div class="log-org">Remote</div>
-        <ul>
-          <li>Tested web applications built by a senior developer, identifying bugs and usability issues and providing detailed feedback.</li>
-          <li>Suggested feature and UX enhancements, and communicated findings clearly to the senior.</li>
-          <li>Gained hands-on experience in quality assurance and cross-functional developer communication.</li>
-        </ul>
-      </div>
 
-      <div class="log-entry">
-        <div class="log-time">2023</div>
-        <h3 class="log-role">Content Contributor — Quiz Application</h3>
-        <div class="log-org">Remote</div>
-        <ul>
-          <li>Added quiz questions, options, and solutions to a Firebase-powered application, ensuring accuracy and clarity.</li>
-          <li>Collaborated with the developer to structure and organize quiz content, gaining exposure to Firebase's real-time database.</li>
-        </ul>
-      </div>
+    <div class="cta-row">
 
-      <div class="log-entry">
-        <div class="log-time">2023</div>
-        <h3 class="log-role">Data Entry Assistant — Hotel Mapping Project</h3>
-        <div class="log-org">Remote</div>
-        <ul>
-          <li>Added hotel details and locations to a digital map system, ensuring accurate placement and data quality.</li>
-          <li>Contributed to improving usability of the travel/hotel application through careful, consistent data entry.</li>
-        </ul>
-      </div>
+      <a
+        class="btn ghost"
+        href="projects.html">
+        View All Projects →
+      </a>
 
     </div>
+
   </section>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="route-label"><span class="method">GET</span> /education <span class="status">200 OK</span></div>
-    <h2 class="section-title">Education &amp; Certifications</h2>
+
+
+  <!-- CAREER DIRECTION -->
+
+  <section>
+
+
+
+    <h2 class="section-title">
+      Career Direction
+    </h2>
+
+
     <div class="grid-2">
+
+
       <div class="mini-card">
-        <h3>BSc in Computer Science and Information Technology (CSIT)</h3>
-        <p>Tribhuvan University — Kathmandu College of Technology, Lokanthali, Bhaktapur · 2022 – 2026</p>
+
+        <h3>
+          DevOps &amp; Cloud
+        </h3>
+
+        <p>
+
+          Building practical knowledge in Docker,
+          Kubernetes, CI/CD, AWS, Microsoft Azure,
+          Linux/CLI, and cloud infrastructure.
+
+        </p>
+
       </div>
+
+
+
       <div class="mini-card">
-        <h3>High School (+2 Science)</h3>
-        <p>Bagiswori College, Bhaktapur · 2020 – 2022</p>
+
+        <h3>
+          Python &amp; Django
+        </h3>
+
+        <p>
+
+          Building backend systems, REST APIs,
+          authentication systems, and full-stack
+          web applications using Python and Django.
+
+        </p>
+
       </div>
+
+
     </div>
-    <div class="pill-list">
-      <span class="pill">Django and Python — Coursework &amp; Self-Learning, 2022</span>
-      <span class="pill">HTML &amp; CSS — Coursework &amp; Self-Learning, 2022</span>
-      <span class="pill">English</span>
-      <span class="pill">Nepali</span>
-      <span class="pill">Newari</span>
-    </div>
+
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="route-label"><span class="method">POST</span> /contact <span class="status">200 OK</span></div>
-    <h2 class="section-title">Get in Touch</h2>
+
+
+  <!-- CONTACT CTA -->
+
+  <section>
+
+
+
+
+    <h2 class="section-title">
+      Let's Connect
+    </h2>
+
+
     <div class="contact-panel">
-      <p style="margin:0; color:var(--muted-text); font-size:14.5px;">Open to Web Developer and Python/Django internship opportunities. Reach out any time.</p>
-      <div class="contact-grid">
-        <div class="contact-item"><span class="k">email</span><a href="mailto:bikashgosain0@gmail.com">bikashgosain0@gmail.com</a></div>
-        <div class="contact-item"><span class="k">phone</span><a href="tel:+9779861040522">+977-9861040522</a></div>
-        <div class="contact-item"><span class="k">location</span>Dekocha-10, Bhaktapur, Nepal</div>
-        <div class="contact-item"><span class="k">github</span><a href="https://github.com/BikashGosain" target="_blank" rel="noopener">github.com/BikashGosain</a></div>
-        <div class="contact-item"><span class="k">linkedin</span><a href="https://www.linkedin.com/in/bikash-gosain/" target="_blank" rel="noopener">linkedin.com/in/BikashGosain</a></div>
+
+      <p
+        style="margin:0; color:var(--muted-text); font-size:14.5px;">
+
+        Open to DevOps, Python/Django, and Web Development
+        internship opportunities.
+
+      </p>
+
+
+      <div class="cta-row">
+
+        <a
+          class="btn primary"
+          href="contact.html">
+          Contact Me →
+        </a>
+
+
+        <a
+          class="btn ghost"
+          href="mailto:bikashgosain0@gmail.com" >
+          Email Me
+        </a>
+
+
+        <a
+          class="btn ghost"
+          href="https://github.com/BikashGosain"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+
+
+        <a
+          class="btn ghost"
+          href="https://www.linkedin.com/in/bikash-gosain/"
+          target="_blank"
+          rel="noopener noreferrer">
+          LinkedIn ↗
+        </a>
+
       </div>
+
     </div>
+
   </section>
+
 
 </main>
 
-<footer>© <span id="year"></span> Bikash Gosain — built with Django habits and HTML tags.</footer>
 
-<button class="to-top" id="toTop" aria-label="Scroll back to top">↑</button>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+<footer>
 
-  // theme toggle (defaults to visitor's OS preference, in-memory only)
-  var root = document.documentElement;
-  var themeBtn = document.getElementById('themeToggle');
-  var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  root.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
-  themeBtn.addEventListener('click', function(){
-    var current = root.getAttribute('data-theme');
-    root.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
-  });
+  © <span id="year"></span>
+  Bikash Gosain — built with Django habits and DevOps curiosity.
 
-  // scroll-to-top button
-  var toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', function(){
-    toTop.classList.toggle('visible', window.scrollY > 480);
-  });
-  toTop.addEventListener('click', function(){
-    window.scrollTo({ top: 0, behavior: reduceMotionQuery.matches ? 'auto' : 'smooth' });
-  });
-  var reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+</footer>
 
-  // mobile nav toggle
-  var toggle = document.getElementById('navToggle');
-  var routes = document.getElementById('routes');
-  toggle.addEventListener('click', function(){
-    var open = routes.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  routes.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ routes.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
-  });
 
-  // terminal typing effect
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var target = document.getElementById('typedOut');
 
-  var finalHTML =
-    '<span class="cmd">$</span> curl https://bikashgosain.dev/about\n\n' +
-    '{\n' +
-    '  <span class="key">"name"</span>: <span class="str">"Bikash Gosain"</span>,\n' +
-    '  <span class="key">"focus"</span>: <span class="str">"Python / Django backend development"</span>,\n' +
-    '  <span class="key">"based_in"</span>: <span class="str">"Bhaktapur, Nepal"</span>,\n' +
-    '  <span class="key">"currently"</span>: <span class="str">"8th semester, CSIT"</span>,\n' +
-    '  <span class="key">"open_to_internship"</span>: <span class="bool">true</span>\n' +
-    '}';
+<button
+  class="to-top"
+  id="toTop"
+  aria-label="Scroll back to top">
+  ↑
+</button>
 
-  if (reduceMotion) {
-    target.innerHTML = finalHTML;
-  } else {
-    var plain =
-      '$ curl https://bikashgosain.dev/about\n\n' +
-      '{\n' +
-      '  "name": "Bikash Gosain",\n' +
-      '  "focus": "Python / Django backend development",\n' +
-      '  "based_in": "Bhaktapur, Nepal",\n' +
-      '  "currently": "8th semester, CSIT",\n' +
-      '  "open_to_internship": true\n' +
-      '}';
-    var i = 0;
-    function typeChar(){
-      if (i <= plain.length){
-        target.textContent = plain.slice(0, i);
-        i += 2;
-        requestAnimationFrame(function(){ setTimeout(typeChar, 8); });
-      } else {
-        target.innerHTML = finalHTML + '<span class="cursor"></span>';
-      }
-    }
-    typeChar();
-  }
-</script>
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>

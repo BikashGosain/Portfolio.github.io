@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Bikash Gosain</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="nav-inner">
+
+    <span class="prompt">
+      <a href="index.html">BikashGosain</a>
+    </span>
+
+    <nav class="routes" id="routes">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      aria-label="Toggle light and dark theme">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+      menu
+    </button>
+
+  </div>
+</header>
+
+
+<main class="wrap">
+
+  <!-- CONTACT INFORMATION -->
+
+  <section>
+
+    <div class="route-label">
+      <span class="method">GET</span>
+      /contact
+      <span class="status">200 OK</span>
+    </div>
+
+    <h1 class="section-title">
+      Get in Touch
+    </h1>
+
+    <div class="contact-panel">
+
+      <p style="margin:0 0 22px; color:var(--muted-text); font-size:14.5px;">
+        Interested in working together, discussing a project, or
+        talking about internship opportunities? Feel free to reach out.
+      </p>
+
+      <div class="contact-grid">
+
+        <div class="contact-item">
+          <span class="k">email</span>
+          <a href="mailto:bikashgosain0@gmail.com">
+            bikashgosain0@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <span class="k">phone</span>
+          <a href="tel:+9779861040522">
+            +977-9861040522
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <span class="k">location</span>
+          Dekocha-10, Bhaktapur, Nepal
+        </div>
+
+        <div class="contact-item">
+          <span class="k">github</span>
+          <a
+            href="https://github.com/BikashGosain"
+            target="_blank"
+            rel="noopener noreferrer">
+            github.com/BikashGosain
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <span class="k">linkedin</span>
+          <a
+            href="https://www.linkedin.com/in/bikash-gosain/"
+            target="_blank"
+            rel="noopener noreferrer">
+            linkedin.com/in/bikash-gosain
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT FORM -->
+
+  <section>
+
+    <div class="route-label">
+      <span class="method">POST</span>
+      /contact/message
+      <span class="status">READY</span>
+    </div>
+
+    <h2 class="section-title">
+      Send a Message
+    </h2>
+
+    <div class="contact-panel">
+
+                  <form
+    class="contact-form"
+    action="https://formspree.io/f/xljrlqvv"
+    method="POST"
+>
+
+        <div class="form-group">
+
+          <label for="name">
+            Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            required>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            required>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="subject">
+            Subject
+          </label>
+
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Internship opportunity / Project / Hello"
+            required>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="message">
+            Message
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="7"
+            placeholder="Write your message..."
+            required></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn primary">
+          Send Message →
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- CV -->
+
+  <section>
+
+    <div class="route-label">
+      <span class="method">GET</span>
+      /resume
+      <span class="status">200 OK</span>
+    </div>
+
+    <h2 class="section-title">
+      Resume
+    </h2>
+
+    <div class="contact-panel">
+
+      <p style="margin:0 0 18px; color:var(--muted-text); font-size:14.5px;">
+        You can also download my resume for more information
+        about my skills, projects, education, and experience.
+      </p>
+
+      <div class="cta-row">
+
+        <a
+          class="btn primary"
+          href="assets/cv/Bikash-Gosain-DevOps-CV.pdf"
+          target="_blank">
+          DevOps CV ↗
+        </a>
+
+        <a
+          class="btn ghost"
+          href="assets/cv/Bikash-Gosain-Django-CV.pdf"
+          target="_blank">
+          Django CV ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  © <span id="year"></span> Bikash Gosain — built with Django habits and HTML tags.
+</footer>
+
+
+<button
+  class="to-top"
+  id="toTop"
+  aria-label="Scroll back to top">
+  ↑
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

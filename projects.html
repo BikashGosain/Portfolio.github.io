@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projects — Bikash Gosain</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="nav-inner">
+
+    <span class="prompt">
+      <a href="index.html">BikashGosain</a>
+    </span>
+
+    <nav class="routes" id="routes">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      aria-label="Toggle light and dark theme">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+      menu
+    </button>
+
+  </div>
+</header>
+
+
+<main class="wrap">
+
+  <section>
+
+    <div class="route-label">
+      <span class="method">GET</span>
+      /projects
+      <span class="status">200 OK</span>
+    </div>
+
+    <h1 class="section-title">Projects</h1>
+
+    <div class="projects">
+
+      <!-- BloggerNepal -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <span class="card-route">/projects/blogger-nepal</span>
+        </div>
+
+        <h2 class="card-title">BloggerNepal</h2>
+
+        <p class="card-desc">
+  Built a Nepal-focused blogging platform with authentication,
+  post creation and editing, content recommendation, analytics,
+  and Cloudinary media integration; deployed on Render with
+  PostgreSQL and Docker.
+</p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+          <span class="tag">HTML/CSS/JS</span>
+        </div>
+
+        <div class="card-links">
+          <a
+            href="https://web-based-blogging-platform-with-content.onrender.com"
+            target="_blank"
+            rel="noopener">
+            Live Demo ↗
+          </a>
+
+          <a
+            href="https://github.com/BikashGosain/BloggerNepal"
+            target="_blank"
+            rel="noopener">
+            GitHub ↗
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- RentMS -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <span class="card-route">/projects/rentms</span>
+        </div>
+
+        <h2 class="card-title">
+          RentMS — Rental Management System
+        </h2>
+
+        <p class="card-desc">
+  Built a full-stack rental management system connecting
+  landlords and tenants, with admin management features and
+  a complete property rental workflow; deployed on Render
+  with PostgreSQL.
+</p>
+
+        <div class="tags">
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">HTML/CSS/JS</span>
+        </div>
+
+        <div class="card-links">
+
+          <a
+            href="https://bikashgosain.com.np"
+            target="_blank"
+            rel="noopener">
+            Live Demo ↗
+          </a>
+
+          <a
+            href="https://github.com/BikashGosain/Rent_Management_System"
+            target="_blank"
+            rel="noopener">
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- JWT Authentication -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <span class="card-route">/projects/jwt-auth</span>
+        </div>
+
+        <h2 class="card-title">
+          Django JWT API Token Authentication
+        </h2>
+
+        <p class="card-desc">
+  Built a REST API with JWT-based authentication and
+  role-based access control using Django REST Framework
+  and SimpleJWT.
+</p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">DRF</span>
+          <span class="tag">SimpleJWT</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+
+        <div class="card-links">
+
+          <a
+            href="https://django-jwt-api-token-authentication.onrender.com"
+            target="_blank"
+            rel="noopener">
+            Live Demo ↗
+          </a>
+
+          <a
+            href="https://github.com/BikashGosain/Django-JWT-API-Token-Authentication"
+            target="_blank"
+            rel="noopener">
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- Student Portal -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <span class="card-route">/projects/student-portal</span>
+        </div>
+
+        <h2 class="card-title">
+          Student Portal System
+        </h2>
+
+        <p class="card-desc">
+  Built a student portal with note management, homework
+  tracker, and to-do list as a centralized study resource
+  hub; deployed on Render with PostgreSQL.
+</p>
+
+        <div class="tags">
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+
+        <div class="card-links">
+
+          <a
+            href="https://student-study-portal-lrz7.onrender.com"
+            target="_blank"
+            rel="noopener">
+            Live Demo ↗
+          </a>
+
+          <a
+            href="https://github.com/BikashGosain/Student-Study-Portal"
+            target="_blank"
+            rel="noopener">
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- DRF Project -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <span class="card-route">/projects/drf-project</span>
+        </div>
+
+        <h2 class="card-title">
+          DRF Project
+        </h2>
+
+        <p class="card-desc">
+  Practiced core Django REST Framework concepts including
+  function-based views, class-based views, mixins, and
+  generic views through hands-on implementation.
+</p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">Django REST Framework</span>
+        </div>
+
+        <div class="card-links">
+
+          <a
+            href="https://github.com/BikashGosain/drf-project"
+            target="_blank"
+            rel="noopener">
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  © <span id="year"></span> Bikash Gosain — built with Django habits and HTML tags.
+</footer>
+
+
+<button
+  class="to-top"
+  id="toTop"
+  aria-label="Scroll back to top">
+  ↑
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

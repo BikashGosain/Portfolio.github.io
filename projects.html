@@ -1,138 +1,403 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Projects — Bikash Gosain</title>
 
+
+  <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- Main stylesheet -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
 
 <body>
 
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
 <header class="topbar">
+
   <div class="nav-inner">
 
     <span class="prompt">
-      <a href="index.html">BikashGosain</a>
+      <a href="index.html">
+        BikashGosain
+      </a>
     </span>
 
-    <nav class="routes" id="routes">
-      <a href="index.html">Home</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="experience.html">Experience</a>
-      <a href="education.html">Education</a>
-      <a href="contact.html">Contact</a>
+
+    <nav
+      class="routes"
+      id="routes"
+    >
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="skills.html">
+        Skills
+      </a>
+
+      <a
+        href="projects.html"
+        class="active"
+      >
+        Projects
+      </a>
+
+      <a href="experience.html">
+        Experience
+      </a>
+
+      <a href="education.html">
+        Education
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </nav>
+
 
     <button
       class="theme-toggle"
       id="themeToggle"
-      aria-label="Toggle light and dark theme">
-      <span class="icon-sun">☀</span>
-      <span class="icon-moon">☾</span>
+      aria-label="Toggle light and dark theme"
+      type="button"
+    >
+
+      <span class="icon-sun">
+        ☀
+      </span>
+
+      <span class="icon-moon">
+        ☾
+      </span>
+
     </button>
+
 
     <button
       class="nav-toggle"
       id="navToggle"
       aria-label="Toggle navigation"
-      aria-expanded="false">
+      aria-expanded="false"
+      type="button"
+    >
       menu
     </button>
 
   </div>
+
 </header>
 
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
 
 <main class="wrap">
 
   <section>
 
+
+    <!-- Page route -->
+
     <div class="route-label">
-      <span class="method">GET</span>
+
+      <span class="method">
+        GET
+      </span>
+
       /projects
-      <span class="status">200 OK</span>
+
+      <span class="status">
+        200 OK
+      </span>
+
     </div>
 
-    <h1 class="section-title">Projects</h1>
-<p class="card-note">
-  <strong>Note:</strong>
-  The live demo may take a few seconds to load due to Render's free-tier
-  cold start. The PostgreSQL database is available for a limited period
-  on the current free tier. After the database expires, the live demo
-  may become unavailable and could return a server error. Please <a href="contact.html">Contact</a> 
-  me for access to the GitHub repository and instructions to run the
-  project locally.
-</p>
+
+    <h1 class="section-title">
+      Projects
+    </h1>
+
+
+    <!-- General deployment note -->
+
+    <p class="card-note">
+
+      <strong>Note:</strong>
+
+      Some live demos are hosted on Render's free tier and may
+      take a few seconds to start. If a demo is temporarily
+      unavailable, please
+      <a href="contact.html">
+        contact me
+      </a>
+      for access to the project source code and local setup
+      instructions.
+
+    </p>
+
+
 
     <div class="projects">
 
-      <!-- BloggerNepal -->
+
+      <!-- =====================================================
+           1. BLOGGER NEPAL
+           ===================================================== -->
 
       <article class="card">
 
         <div class="card-top">
-          <span class="card-route">/projects/blogger-nepal</span>
+
+          <span class="card-route">
+            /projects/blogger-nepal
+          </span>
+
         </div>
 
 
-        <h2 class="card-title">1. BloggerNepal</h2>
-<div class="project-images">
+        <h2 class="card-title">
+          1. BloggerNepal
+        </h2>
 
 
-    <img src="assets/images/BloggerNepal/AzureBloggerNepalHomePage.png"
-         alt="BloggerNepal home page">
+        <!-- IMAGE SLIDER -->
 
-    <img src="assets/images/BloggerNepal/AzureBloggerNepalDashboardPage.png"
-         alt="BloggerNepal dashboard">
+        <div
+          class="pgx-gallery"
+          aria-label="BloggerNepal project screenshots"
+        >
 
-    <img src="assets/images/BloggerNepal/AzureBloggerNepalDashboardAnalyticsPage.png"
-         alt="BloggerNepal analytics dashboard">
+          <div
+            class="pgx-gallery-track"
+            tabindex="0"
+            aria-label="BloggerNepal screenshots. Use left and right arrow keys to navigate."
+          >
 
-    <img src="assets/images/BloggerNepal/AzureBloggerNepalBlogsPage.png"
-         alt="BloggerNepal blogs page">
 
-    <img src="assets/images/BloggerNepal/AzureBloggerNepalBlogDetailPage.png"
-         alt="BloggerNepal blog detail page">
+            <div class="pgx-gallery-slide">
 
-    <img src="assets/images/BloggerNepal/AzureBloggerNepalCategoryPage.png"
-         alt="BloggerNepal category page">
-  </div>
+              <img
+                src="assets/images/BloggerNepal/AzureBloggerNepalHomePage.png"
+                alt="BloggerNepal home page"
+                loading="eager"
+              >
 
-<hr>
-  <p>Azure deployment</p>
-  <hr>
+            </div>
 
-  <div class="project-images">
-    <img src="assets/images/BloggerNepal/Azure CIandCD.png"
-         alt="BloggerNepal Azure CI/CD deployment">
-    <img src="assets/images/BloggerNepal/AzureBloggerNepalTerminalBlogsandLogShow.png"
-         alt="BloggerNepal Azure terminal and logs">
 
-    <img src="assets/images/BloggerNepal/BloggerNepal-VM.png"
-         alt="BloggerNepal Azure virtual machine">
+            <div class="pgx-gallery-slide">
 
-    <img src="assets/images/BloggerNepal/BloggerNepal-VMNSG.png"
-         alt="BloggerNepal Azure VM network security group">
+              <img
+                src="assets/images/BloggerNepal/AzureBloggerNepalDashboardPage.png"
+                alt="BloggerNepal dashboard"
+                loading="lazy"
+              >
 
-    <img src="assets/images/BloggerNepal/ResourceGroupOverview.png"
-         alt="BloggerNepal Azure resource group">
-</div>
-<br>
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/AzureBloggerNepalDashboardAnalyticsPage.png"
+                alt="BloggerNepal analytics dashboard"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/AzureBloggerNepalBlogsPage.png"
+                alt="BloggerNepal blogs page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/AzureBloggerNepalBlogDetailPage.png"
+                alt="BloggerNepal blog detail page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/AzureBloggerNepalCategoryPage.png"
+                alt="BloggerNepal category page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/Azure CIandCD.png"
+                alt="BloggerNepal Azure CI and CD deployment"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/AzureBloggerNepalTerminalBlogsandLogShow.png"
+                alt="BloggerNepal Azure terminal and logs"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/BloggerNepal-VM.png"
+                alt="BloggerNepal Azure virtual machine"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/BloggerNepal-VMNSG.png"
+                alt="BloggerNepal Azure VM network security group"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/BloggerNepal/ResourceGroupOverview.png"
+                alt="BloggerNepal Azure resource group"
+                loading="lazy"
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- Controls -->
+
+          <div class="pgx-gallery-controls">
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-prev
+              aria-label="Previous BloggerNepal screenshot"
+            >
+              ‹
+            </button>
+
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-next
+              aria-label="Next BloggerNepal screenshot"
+            >
+              ›
+            </button>
+
+          </div>
+
+
+          <!-- Counter -->
+
+          <div class="pgx-gallery-meta">
+
+            <span
+              class="pgx-gallery-counter"
+              aria-live="polite"
+            >
+              1 / 11
+            </span>
+
+          </div>
+
+
+          <span class="pgx-gallery-hint">
+            drag / swipe
+          </span>
+
+        </div>
+
+
         <p class="card-desc">
- Developed a full-stack blogging platform using Python and Django. Built user authentication, blog creation and management, categories, search, responsive frontend, and database-driven content management. Implemented a content similarity system using TF-IDF and cosine similarity to recommend related blog posts. Designed the application with a focus on usability, clean structure, and maintainable backend code, and deployed the project for real-world use.
-</p>
+
+          Developed a full-stack blogging platform using Python
+          and Django. Built user authentication, blog creation
+          and management, categories, search, responsive
+          frontend, and database-driven content management.
+          Implemented a content similarity system using TF-IDF
+          and cosine similarity to recommend related blog posts.
+          Deployed the application with Docker and Microsoft Azure.
+
+        </p>
+
 
         <div class="tags">
+
           <span class="tag">Python</span>
           <span class="tag">Django</span>
           <span class="tag">DRF</span>
@@ -140,271 +405,772 @@
           <span class="tag">Docker</span>
           <span class="tag">Azure</span>
           <span class="tag">HTML/CSS/JS</span>
+
         </div>
 
+
         <div class="card-links">
+
           <a
             href="https://web-based-blogging-platform-with-content.onrender.com"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer"
+          >
             Live Demo ↗
           </a>
+
 
           <a
             href="https://github.com/BikashGosain/BloggerNepal"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer"
+          >
             GitHub ↗
           </a>
+
         </div>
+
       </article>
 
 
-     <!-- RentMS -->
 
-<article class="card">
-
-  <div class="card-top">
-    <span class="card-route">/projects/rentms</span>
-  </div>
-
-  <h2 class="card-title">
-    2. RentMS — Rental Management System
-  </h2>
-
-  <div class="project-images">
-  <img src="assets/images/rentms/home.png" alt="RentMS home page">
-
-  <img src="assets/images/rentms/owner.png" alt="RentMS owner dashboard">
-
-  <img src="assets/images/rentms/tenant.png" alt="RentMS tenant dashboard">
-
-  <img src="assets/images/rentms/azure domain admin page.png" alt="RentMS admin page on Azure domain">
-
-  <img src="assets/images/rentms/azure domain admin page.png" alt="RentMS admin dashboard">
-
-  <img src="assets/images/rentms/azure rentms  rentms-vm owerview showing vm and ip too.png" alt="Azure VM overview for RentMS">
-
-  <img src="assets/images/rentms/azure rentms database owerview.png" alt="Azure PostgreSQL database for RentMS">
-
-  <img src="assets/images/rentms/azure rentms resource group.png" alt="Azure resource group for RentMS">
-
-  <img src="assets/images/rentms/azure rentms vm and ip.png" alt="Azure RentMS VM and IP configuration">
-
-  <img src="assets/images/rentms/azure resource list status.png" alt="Azure resource deployment status">
-
-  <img src="assets/images/rentms/azure student credit.png" alt="Azure for Students subscription credit">
-</div>
-  <br>
-
-  <p class="card-desc">
-    Built a full-stack rental management system connecting
-    landlords and tenants, with admin management features and
-    a complete property rental workflow; Implemented REST APIs, OTP email verification, and Google OAuth. Deployed on Microsoft Azure VM with PostgreSQL, Nginx, and Gunicorn, with HTTPS and a custom domain; also deployed and tested on Render.
-  </p>
-
-  <div class="tags">
-    <span class="tag">Python</span>
-            <span class="tag">Django</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">DRF</span> 
-            <span class="tag">JWT</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Nginx</span>
-            <span class="tag">Gunicorn</span>
-    <span class="tag">HTML/CSS/JS</span>
-  </div>
-
-  <div class="card-links">
-
-    <a
-      href="https://bikashgosain.com.np"
-      target="_blank"
-      rel="noopener">
-      Live Demo ↗
-    </a>
-
-    <a
-      href="https://github.com/BikashGosain/Rent_Management_System"
-      target="_blank"
-      rel="noopener">
-      GitHub ↗
-    </a>
-
-  </div>
-
-</article>
- 
-      <!-- Panchakanya Collections Project -->
-
-<article class="card">
-
-  <div class="card-top">
-    <span class="card-route">/projects/panchakanya-collections</span>
-  </div>
-
-  <h2 class="card-title">
-    3. Panchakanya Collections
-  </h2>
-
-  <div class="project-images">
-  <img src="assets/images/panchakanya-collections/pc github.png" alt="GitHub">
-  <img src="assets/images/panchakanya-collections/pc proper homepage.png" alt="Proper homepage">
-  <img src="assets/images/panchakanya-collections/pc homepage.png" alt="Homepage">
-  <img src="assets/images/panchakanya-collections/pc category page.png" alt="Category page">
-  <img src="assets/images/panchakanya-collections/pc collection page.png" alt="Collection page">
-  <img src="assets/images/panchakanya-collections/pc contact page.png" alt="Contact page">
-  <img src="assets/images/panchakanya-collections/pc product detail page.png" alt="Product detail page">
-  <img src="assets/images/panchakanya-collections/pc profile page.png" alt="Profile page">
-  <img src="assets/images/panchakanya-collections/pc reviews.png" alt="Reviews">
-  <img src="assets/images/panchakanya-collections/pc wishlist.png" alt="Wishlist">
-  <img src="assets/images/panchakanya-collections/pc cart.png" alt="Cart page">
-  <img src="assets/images/panchakanya-collections/pc category.png" alt="Category">
-  <img src="assets/images/panchakanya-collections/pc products.png" alt="Products">
-  <img src="assets/images/panchakanya-collections/pc recyclebin.png" alt="Recycle bin">
-</div>
-  <p class="card-desc">
-    Developed a full-stack e-commerce website Panchakanya Collections using Python and Django. Built product and category management, product search and filtering, shopping cart, wishlist, user authentication, responsive UI, and an admin dashboard. Integrated PostgreSQL, Cloudinary for media storage, and production deployment. Also worked with Git, and deployment configuration to prepare the application for production.
-  </p>
-
-  <div class="tags">
-    <span class="tag">Python</span>
-    <span class="tag">Django</span>
-    <span class="tag">PostgreSQL</span>
-    <span class="tag">Cloudinary</span>
-    <span class="tag">HTML/CSS</span>
-    <span class="tag">JavaScript</span>
-    <span class="tag">Render</span>
-  </div>
-
-  <div class="card-links">
-
-    <a
-      href="https://panchakanya-collections.onrender.com"
-      target="_blank"
-      rel="noopener">
-      Live Demo ↗
-    </a>
-
-    <p class="card-note">
-      <strong>Note:</strong>
-      The live demo may take a few seconds to load due to Render's free-tier
-      cold start. The PostgreSQL database is available for a limited period
-      on the current free tier. After the database expires, the live demo
-      may become unavailable and could return a server error. Please contact
-      me for access to the GitHub repository and instructions to run the
-      project locally.
-    </p>
-
-    <a
-      href="https://github.com/BikashGosain/panchakanya-collections"
-      target="_blank"
-      rel="noopener">
-      GitHub ↗
-    </a>
-
-    <p class="card-note">
-      <strong>Note:</strong>
-      The repository is private. Please contact me if you would like
-      access to the source code.
-    </p>
-
-  </div>
-
-</article>
-
-
-      <!-- Student Portal -->
+      <!-- =====================================================
+           2. RENTMS
+           ===================================================== -->
 
       <article class="card">
 
         <div class="card-top">
-          <span class="card-route">/projects/student-portal</span>
+
+          <span class="card-route">
+            /projects/rentms
+          </span>
+
         </div>
+
+
+        <h2 class="card-title">
+          2. RentMS — Rental Management System
+        </h2>
+
+
+        <!-- IMAGE SLIDER -->
+
+        <div
+          class="pgx-gallery"
+          aria-label="RentMS project screenshots"
+        >
+
+          <div
+            class="pgx-gallery-track"
+            tabindex="0"
+            aria-label="RentMS screenshots"
+          >
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/home.png"
+                alt="RentMS home page"
+                loading="eager"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/owner.png"
+                alt="RentMS owner dashboard"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/tenant.png"
+                alt="RentMS tenant dashboard"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/azure domain admin page.png"
+                alt="RentMS admin page on Azure"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/azure rentms  rentms-vm owerview showing vm and ip too.png"
+                alt="RentMS Azure VM overview"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/azure rentms database owerview.png"
+                alt="RentMS Azure PostgreSQL database"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/azure rentms resource group.png"
+                alt="RentMS Azure resource group"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/azure rentms vm and ip.png"
+                alt="RentMS Azure VM and IP configuration"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/azure resource list status.png"
+                alt="RentMS Azure resource deployment status"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/rentms/azure student credit.png"
+                alt="Azure for Students subscription"
+                loading="lazy"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="pgx-gallery-controls">
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-prev
+              aria-label="Previous RentMS screenshot"
+            >
+              ‹
+            </button>
+
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-next
+              aria-label="Next RentMS screenshot"
+            >
+              ›
+            </button>
+
+          </div>
+
+
+          <div class="pgx-gallery-meta">
+
+            <span
+              class="pgx-gallery-counter"
+              aria-live="polite"
+            >
+              1 / 10
+            </span>
+
+          </div>
+
+
+          <span class="pgx-gallery-hint">
+            drag / swipe
+          </span>
+
+        </div>
+
+
+        <p class="card-desc">
+
+          Built a full-stack rental management system connecting
+          landlords and tenants, with admin management features
+          and a complete property rental workflow. Implemented
+          REST APIs, OTP email verification, and Google OAuth.
+          Deployed on Microsoft Azure VM with PostgreSQL, Nginx,
+          and Gunicorn, with HTTPS and a custom domain.
+
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">DRF</span>
+          <span class="tag">JWT</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">Gunicorn</span>
+          <span class="tag">HTML/CSS/JS</span>
+
+        </div>
+
+
+        <div class="card-links">
+
+          <a
+            href="https://bikashgosain.com.np"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live Demo ↗
+          </a>
+
+
+          <a
+            href="https://github.com/BikashGosain/Rent_Management_System"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================================
+           3. PANCHAKANYA COLLECTIONS
+           ===================================================== -->
+
+      <article class="card">
+
+        <div class="card-top">
+
+          <span class="card-route">
+            /projects/panchakanya-collections
+          </span>
+
+        </div>
+
+
+        <h2 class="card-title">
+          3. Panchakanya Collections
+        </h2>
+
+
+        <!-- IMAGE SLIDER -->
+
+        <div
+          class="pgx-gallery"
+          aria-label="Panchakanya Collections screenshots"
+        >
+
+          <div
+            class="pgx-gallery-track"
+            tabindex="0"
+            aria-label="Panchakanya Collections screenshots"
+          >
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc proper homepage.png"
+                alt="Panchakanya Collections homepage"
+                loading="eager"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc homepage.png"
+                alt="Panchakanya Collections homepage"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc category page.png"
+                alt="Panchakanya Collections category page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc collection page.png"
+                alt="Panchakanya Collections collection page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc contact page.png"
+                alt="Panchakanya Collections contact page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc product detail page.png"
+                alt="Panchakanya Collections product detail page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc profile page.png"
+                alt="Panchakanya Collections profile page"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc reviews.png"
+                alt="Panchakanya Collections reviews"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc wishlist.png"
+                alt="Panchakanya Collections wishlist"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc cart.png"
+                alt="Panchakanya Collections cart"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc category.png"
+                alt="Panchakanya Collections category management"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc products.png"
+                alt="Panchakanya Collections product management"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc recyclebin.png"
+                alt="Panchakanya Collections recycle bin"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/panchakanya-collections/pc github.png"
+                alt="Panchakanya Collections GitHub project"
+                loading="lazy"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="pgx-gallery-controls">
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-prev
+              aria-label="Previous Panchakanya screenshot"
+            >
+              ‹
+            </button>
+
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-next
+              aria-label="Next Panchakanya screenshot"
+            >
+              ›
+            </button>
+
+          </div>
+
+
+          <div class="pgx-gallery-meta">
+
+            <span
+              class="pgx-gallery-counter"
+              aria-live="polite"
+            >
+              1 / 14
+            </span>
+
+          </div>
+
+
+          <span class="pgx-gallery-hint">
+            drag / swipe
+          </span>
+
+        </div>
+
+
+        <p class="card-desc">
+
+          Developed a full-stack e-commerce website using Python
+          and Django. Built product and category management,
+          search and filtering, shopping cart, wishlist,
+          authentication, responsive UI, and an admin dashboard.
+          Integrated PostgreSQL and Cloudinary for media storage
+          and configured the application for production deployment.
+
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Cloudinary</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Render</span>
+
+        </div>
+
+
+        <div class="card-links">
+
+          <a
+            href="https://panchakanya-collections.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live Demo ↗
+          </a>
+
+
+          <a
+            href="https://github.com/BikashGosain/panchakanya-collections"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+
+
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================================
+           4. STUDENT PORTAL
+           ===================================================== -->
+
+      <article class="card">
+
+        <div class="card-top">
+
+          <span class="card-route">
+            /projects/student-portal
+          </span>
+
+        </div>
+
 
         <h2 class="card-title">
           4. Student Portal System
         </h2>
- <div class="project-images">
-  <img src="assets/images/studentstudyportal/sspHomePage.png" alt="Student Portal home page">
 
-  <img src="assets/images/studentstudyportal/sspProfile.png" alt="Student Portal profile page">
 
-  <img src="assets/images/studentstudyportal/sspProfile.png" alt="Student Portal home page">
-</div>
-<br>
+        <!-- IMAGE SLIDER -->
+
+        <div
+          class="pgx-gallery"
+          aria-label="Student Portal screenshots"
+        >
+
+          <div
+            class="pgx-gallery-track"
+            tabindex="0"
+            aria-label="Student Portal screenshots"
+          >
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/studentstudyportal/sspHomePage.png"
+                alt="Student Portal home page"
+                loading="eager"
+              >
+
+            </div>
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/studentstudyportal/sspHomePage.png"
+                alt="Student Portal home page"
+                loading="eager"
+              >
+
+            </div>
+
+
+            <div class="pgx-gallery-slide">
+
+              <img
+                src="assets/images/studentstudyportal/sspProfile.png"
+                alt="Student Portal profile page"
+                loading="lazy"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="pgx-gallery-controls">
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-prev
+              aria-label="Previous Student Portal screenshot"
+            >
+              ‹
+            </button>
+
+
+            <button
+              class="pgx-gallery-button"
+              type="button"
+              data-pgx-next
+              aria-label="Next Student Portal screenshot"
+            >
+              ›
+            </button>
+
+          </div>
+
+
+          <div class="pgx-gallery-meta">
+
+            <span
+              class="pgx-gallery-counter"
+              aria-live="polite"
+            >
+              1 / 2
+            </span>
+
+          </div>
+
+
+          <span class="pgx-gallery-hint">
+            drag / swipe
+          </span>
+
+        </div>
+
 
         <p class="card-desc">
-  Built a student portal with note management, homework
-  tracker, and to-do list as a centralized study resource
-  hub; deployed on Render with PostgreSQL.
-</p>
+
+          Built a student portal with note management,
+          homework tracking, and a to-do list as a centralized
+          study resource hub. Deployed on Render with PostgreSQL.
+
+        </p>
+
 
         <div class="tags">
+
           <span class="tag">Django</span>
           <span class="tag">PostgreSQL</span>
           <span class="tag">HTML/CSS</span>
+
         </div>
+
 
         <div class="card-links">
 
           <a
             href="https://student-study-portal-lrz7.onrender.com"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer"
+          >
             Live Demo ↗
           </a>
+
 
           <a
             href="https://github.com/BikashGosain/Student-Study-Portal"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer"
+          >
             GitHub ↗
           </a>
 
         </div>
 
       </article>
-      
-      <!-- JWT Authentication -->
+
+
+
+      <!-- =====================================================
+           5. JWT AUTHENTICATION
+           ===================================================== -->
 
       <article class="card">
 
         <div class="card-top">
-          <span class="card-route">/projects/jwt-auth</span>
+
+          <span class="card-route">
+            /projects/jwt-auth
+          </span>
+
         </div>
+
 
         <h2 class="card-title">
           5. Django JWT API Token Authentication
         </h2>
 
+
         <p class="card-desc">
-  Built a REST API with JWT-based authentication and
-  role-based access control using Django REST Framework
-  and SimpleJWT.
-</p>
+
+          Built a REST API with JWT-based authentication and
+          role-based access control using Django REST Framework
+          and SimpleJWT.
+
+        </p>
+
 
         <div class="tags">
+
           <span class="tag">Python</span>
           <span class="tag">Django</span>
           <span class="tag">DRF</span>
           <span class="tag">SimpleJWT</span>
           <span class="tag">HTML/CSS</span>
+
         </div>
+
 
         <div class="card-links">
 
           <a
             href="https://django-jwt-api-token-authentication.onrender.com"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer"
+          >
             Live Demo ↗
           </a>
+
 
           <a
             href="https://github.com/BikashGosain/Django-JWT-API-Token-Authentication"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer"
+          >
             GitHub ↗
           </a>
 
@@ -414,44 +1180,58 @@
 
 
 
-
-
-      <!-- DRF Project -->
+      <!-- =====================================================
+           6. DRF PROJECT
+           ===================================================== -->
 
       <article class="card">
 
         <div class="card-top">
-          <span class="card-route">/projects/drf-project</span>
+
+          <span class="card-route">
+            /projects/drf-project
+          </span>
+
         </div>
 
+
         <h2 class="card-title">
-          DRF Project
+          6. DRF Project
         </h2>
 
+
         <p class="card-desc">
-  Practiced core Django REST Framework concepts including
-  function-based views, class-based views, mixins, and
-  generic views through hands-on implementation.
-</p>
+
+          Practiced core Django REST Framework concepts including
+          function-based views, class-based views, mixins, and
+          generic views through hands-on implementation.
+
+        </p>
+
 
         <div class="tags">
+
           <span class="tag">Python</span>
           <span class="tag">Django</span>
           <span class="tag">Django REST Framework</span>
+
         </div>
+
 
         <div class="card-links">
 
           <a
             href="https://github.com/BikashGosain/drf-project"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer"
+          >
             GitHub ↗
           </a>
 
         </div>
 
       </article>
+
 
     </div>
 
@@ -460,20 +1240,42 @@
 </main>
 
 
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer>
-  © <span id="year"></span> Bikash Gosain — built with Django habits and HTML tags.
+
+  © <span id="year"></span>
+  Bikash Gosain ·
+  built with Django habits and HTML tags.
+
 </footer>
 
+
+
+<!-- =========================================================
+     SCROLL TO TOP
+     ========================================================= -->
 
 <button
   class="to-top"
   id="toTop"
-  aria-label="Scroll back to top">
+  aria-label="Scroll back to top"
+  type="button"
+>
   ↑
 </button>
 
 
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
 <script src="script.js"></script>
+
 
 </body>
 </html>

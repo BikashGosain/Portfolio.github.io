@@ -1030,9 +1030,9 @@ h2.section-title{
 
   font-family:var(--mono);
 
-  font-size:10px;
+  font-size:12px;
 
-  color:var(--fog);
+  color:red;
 
   background:
     color-mix(
